@@ -1,10 +1,5 @@
 #include "Grid.h"
 
-#include "Cell.h"
-
-#include "Ladder.h"
-#include "Card.h"
-#include "Player.h"
 
 
 int Grid::GetLaddersNum()

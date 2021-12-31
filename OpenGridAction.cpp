@@ -24,5 +24,5 @@ OpenGridAction::OpenGridAction(ApplicationManager *pApp) : Action(pApp)
 
  OpenGridAction::~OpenGridAction()
  {
-	 this->pManager->GetGrid()->
+	 
  }

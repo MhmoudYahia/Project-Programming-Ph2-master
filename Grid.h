@@ -1,5 +1,5 @@
 #pragma once
-#include <fstream>
+
 #include "GameObject.h"
 #include "UI_Info.h"
 #include "DEFS.h"
@@ -7,14 +7,16 @@
 #include "Input.h"
 #include "Output.h"
 #include "CellPosition.h"
+#include <fstream>
+using namespace std;
 
 // forward declarations (the includes are in the cpp)
-class Cell;
-class GameObject;
-class Ladder;
-class Card;
-class Player;
 
+#include "Cell.h"
+
+#include "Ladder.h"
+#include "Card.h"
+#include "Player.h"
 class Grid
 {
 	int countL;

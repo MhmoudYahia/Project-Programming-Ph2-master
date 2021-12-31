@@ -6,6 +6,8 @@ enum GameObjectEnum {
 	snake,
 	card,
 };
+
+
 // Base Class for All Game Objects ( ladders, snakes and cards )
 class GameObject
 {
