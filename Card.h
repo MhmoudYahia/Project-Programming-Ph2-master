@@ -1,8 +1,8 @@
 #pragma once
 
-#include "GameObject.h"
-#include "Player.h"
 
+#include "Player.h"
+#include"GameObject.h"
 // Base Class of All Types of Cards (CardOne, CardTwo, CardThree, ...etc.)
 // Note: We will make each type of Card in a separate class because:
 // it may have additional data members and functions like: Apply(), ...etc. which have different implementation depending on Card Number

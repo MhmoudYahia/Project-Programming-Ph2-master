@@ -1,7 +1,6 @@
 #include "Grid.h"
 
 
-
 int Grid::GetLaddersNum()
 {
 	return this->countL;

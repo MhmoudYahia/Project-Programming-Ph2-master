@@ -3,6 +3,7 @@
 #include "Grid.h"
 #include "Cell.h"
 
+
 class Player
 {
 	Cell * pCell;		   // pointer to the current Cell of the player

@@ -1,6 +1,6 @@
 #include "Player.h"                                    //Done
 
-#include "GameObject.h"
+
 
 Player::Player(Cell * pCell, int playerNum) : stepCount(0), wallet(100), playerNum(playerNum)
 {

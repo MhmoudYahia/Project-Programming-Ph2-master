@@ -1,11 +1,6 @@
 #pragma once
 
 #include "Grid.h"
-enum GameObjectEnum {
-	ladder,
-	snake,
-	card,
-};
 
 
 // Base Class for All Game Objects ( ladders, snakes and cards )

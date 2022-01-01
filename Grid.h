@@ -1,9 +1,8 @@
 #pragma once
 
-#include "GameObject.h"
+
 #include "UI_Info.h"
 #include "DEFS.h"
-
 #include "Input.h"
 #include "Output.h"
 #include "CellPosition.h"
@@ -11,6 +10,11 @@
 using namespace std;
 
 // forward declarations (the includes are in the cpp)
+enum GameObjectEnum {
+	ladder,
+	snake,
+	card,
+};
 
 #include "Cell.h"
 
