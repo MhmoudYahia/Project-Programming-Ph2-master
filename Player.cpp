@@ -1,6 +1,6 @@
 #include "Player.h"                                    //Done
-
-
+#include"Cell.h"
+#include "GameObject.h"
 
 Player::Player(Cell * pCell, int playerNum) : stepCount(0), wallet(100), playerNum(playerNum)
 {
@@ -87,9 +87,9 @@ void Player::Move(Grid * pGrid, int diceNumber)
 	if (pCell->HasLadder())
 		pCell->GetGameObject()->Apply(pGrid, this);
 	else if(pCell->HasSnake())
-		pCell->GetGameObject()->Apply(pGrid, this);
+		int c;//pCell->GetGameObject()->Apply(pGrid, this);
 	else if (pCell->HasCard())
-		pCell->GetGameObject()->Apply(pGrid, this);
+		int c;//pCell->GetGameObject()->Apply(pGrid, this);
 	if (this->stepCount == 99)
 		pGrid->SetEndGame(true);
 	// 1- Increment the turnCount because calling Move() means that the player has rolled the dice once

@@ -1,5 +1,8 @@
 #include "Grid.h"
-
+#include"GameObject.h"
+#include "Cell.h"
+#include "Ladder.h"
+#include "Card.h"
 
 int Grid::GetLaddersNum()
 {
@@ -19,6 +22,19 @@ int Grid::GetCardsNum()
 void Grid::SetCurrPlayer(int n)
 {
 	this->currPlayerNumber = n;
+}
+
+void Grid::Clear()
+{
+
+	for (int i = NumVerticalCells - 1; i >= 0; i--)
+	{
+		for (int j = 0; j < NumHorizontalCells; j++)
+		{
+			if (CellList[i][j]->GetGameObject() != NULL)
+				this->RemoveObjectFromCell(CellList[i][j]->GetCellPosition());
+		}
+	}
 }
 
 Grid::Grid(Input * pIn, Output * pOut) : pIn(pIn), pOut(pOut) // Initializing pIn, pOut
@@ -91,7 +107,12 @@ bool Grid::RemoveObjectFromCell(const CellPosition & pos)//M
 	if (pos.IsValidCell()) // Check if valid position
 	{
 		// Note: you can deallocate the object here before setting the pointer to null if it is needed
-
+		if (CellList[pos.VCell()][pos.HCell()]->HasLadder())
+			this->countL--;
+		if (CellList[pos.VCell()][pos.HCell()]->HasCard())
+			this->countC--;
+		if (CellList[pos.VCell()][pos.HCell()]->HasSnake())
+			this->countS--;
 		CellList[pos.VCell()][pos.HCell()]->SetGameObject(NULL);
 		return true;
 	}
@@ -194,19 +215,6 @@ void Grid::SaveAll(ofstream & OutFile, GameObjectEnum g)//M
 	
 }
 
-void Grid::OpenAll(ifstream & Infile, GameObjectEnum g)//M
-{
-
-	for (int i = NumVerticalCells - 1; i >= 0; i--)
-	{
-		for (int j = 0; j < NumHorizontalCells; j++)
-		{
-			if (CellList[i][j]->GetGameObject() != NULL)
-				CellList[i][j]->GetGameObject()->Load(Infile, g);
-			
-		}
-	}
-}
 
 Player * Grid::GetCurrentPlayer() const
 {
@@ -305,6 +313,7 @@ Grid::~Grid()
 	{
 		for (int j = 0; j < NumHorizontalCells; j++) 
 		{
+
 			delete CellList[i][j];
 		}
 	}

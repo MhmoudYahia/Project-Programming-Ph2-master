@@ -244,7 +244,7 @@ void Output::CreatePlayModeToolBar() const
 	MenuItemImages[ITM_SWITCH_TO_DESIGN_MODE] = "images\\Menu_SwitchToGrid.jpg";
 	MenuItemImages[ITM_New_Game] = "images\\Menu_SwitchToGrid.jpg";
 	MenuItemImages[ITM_Input_Dice_Value] = "images\\Menu_Iput_Dice_Value.jpg";
-	MenuItemImages[ITM_EXIT] = "images\\Menu_Exit.jpg";
+	MenuItemImages[ITM_EXIT2] = "images\\Menu_Exit.jpg";
 	///TODO: Prepare images for each menu item and add it to the list
 
 

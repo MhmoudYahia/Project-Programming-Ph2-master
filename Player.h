@@ -1,8 +1,7 @@
 #pragma once
 
 #include "Grid.h"
-#include "Cell.h"
-
+class Cell;
 
 class Player
 {

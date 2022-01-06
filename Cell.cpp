@@ -69,6 +69,7 @@ Card * Cell::HasCard() const
 
 void Cell::DrawCellOrCard(Output* pOut) const
 {
+
 	// Checks if there is a Card on the cell
 	if (HasCard()) // means if not NULL
 		pGameObject->Draw(pOut); // draw the card then

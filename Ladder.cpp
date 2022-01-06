@@ -2,13 +2,19 @@
 
 Ladder::Ladder(const CellPosition & startCellPos, const CellPosition & endCellPos) : GameObject(startCellPos)
 {
-	countL++;
+
 	if(endCellPos.HCell()== startCellPos.HCell()&& endCellPos.VCell() > startCellPos.VCell()&&endCellPos.IsValidCell())
 	this->endCellPos = endCellPos;
 
 	///TODO: Do the needed validation 
 }
-int Ladder::countL = 0;
+//
+//Ladder::Ladder()
+//{
+//	CellPosition def(23);      //default end pos
+//	this->endCellPos = def;
+//}
+
 void Ladder::Draw(Output* pOut) const
 {
 	pOut->DrawLadder(position, endCellPos);
@@ -33,6 +39,11 @@ void Ladder::Apply(Grid* pGrid, Player* pPlayer)
 	pGrid->UpdateInterface();          //M
 }
 
+void Ladder::setendposition(CellPosition c)
+{
+	endCellPos = c;
+}
+
 CellPosition Ladder::GetEndPosition() const
 {
 	return endCellPos;
@@ -44,14 +55,12 @@ void Ladder::Save(ofstream &OutFile, GameObjectEnum g) {
 		
 	}
 }
- void Ladder::Load(ifstream &Infile, GameObjectEnum g) {
+ void Ladder::Load(ifstream &Infile) {
 	 int a, b;
-	 if (g == ladder) {
-		
-		 Infile >> a >> b;
-	                                                   
-		 
-	 }
+	 Infile >> a >> b;
+	 CellPosition strtp(a), endp(b);
+	 this->SetPostion(strtp);
+	 this->setendposition(endp);
  }
 Ladder::~Ladder()
 {

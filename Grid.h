@@ -7,23 +7,21 @@
 #include "Output.h"
 #include "CellPosition.h"
 #include <fstream>
+class Cell;
+class GameObject;
+class Ladder;
+class Card;
+class Player;
+
 using namespace std;
 
 // forward declarations (the includes are in the cpp)
-enum GameObjectEnum {
-	ladder,
-	snake,
-	card,
-};
 
-#include "Cell.h"
 
-#include "Ladder.h"
-#include "Card.h"
-#include "Player.h"
+
 class Grid
 {
-	int countL;
+ int countL;
  int countS;
  int countC;
  
@@ -48,7 +46,7 @@ public:
 	int GetCardsNum();
 	void SetCurrPlayer(int n);
 
-
+	void Clear();
 	Grid(Input * pIn, Output * pOut);	  // Gives the Grid a Pointer to the Output Object and the Input Object
 										  // and makes any needed initializations
 

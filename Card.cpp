@@ -18,9 +18,9 @@ int Card::GetCardNumber()
 
 void Card::Draw(Output* pOut) const
 {
-
+	int i = 0; 
 	///TODO: call the appropriate Ouput function that draws a cell containing the "cardNumber" in "position"
-	pOut->DrawCell(this->GetPosition, this->cardNumber);//M
+	//pOut->DrawCell(this->GetPosition, this->cardNumber);//M
 
 }
 
@@ -40,6 +40,7 @@ void Card::Apply(Grid* pGrid, Player* pPlayer)
 
 void Card::Save(ofstream & OutFile, GameObjectEnum)
 {
+
 	                        //after cards //M
 }
 

@@ -30,13 +30,17 @@ CellPosition Snake::GetEndPosition() const
 }
 void Snake::Save(ofstream &OutFile, GameObjectEnum g) {
 	if (g == snake) {
-		OutFile.open("Grid.txt", ios::out);
+		
 		OutFile << this->GetPosition().GetCellNum() << " " << this->GetEndPosition().GetCellNum() << endl;
-		OutFile.close();
+		
 	}
 }
 void Snake::Load(ifstream &Infile, GameObjectEnum g) {
+	if (g == snake) {
 
+	
+
+	}
 }
 Snake::~Snake()
 {

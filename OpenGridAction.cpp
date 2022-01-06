@@ -13,16 +13,24 @@ OpenGridAction::OpenGridAction(ApplicationManager *pApp) : Action(pApp)
                                                      // ÇÊÔß ÇÓã ÇáãáÝ ãæÌæÏ æáÇ
  void OpenGridAction::Execute()
  {
+	 int numOfLadders, numOfSnakes, numOfcards;
 	 ifstream infile;
 	 this->ReadActionParameters();
-	 infile.open(fn, ios::out);
-	 this->pManager->GetGrid()->OpenAll(infile, ladder);
+	 infile.open(fn, ios::in);
+	 GameObject * pObj;
+	 infile >> numOfLadders;
+	 for (int i = 0; i < numOfLadders; i++) {
+		 Ladder*L;
+		// this->pManager->GetGrid()->AddObjectToCell()
+	 }
+	 /*this->pManager->GetGrid()->OpenAll(infile, ladder);
 	 this->pManager->GetGrid()->OpenAll(infile, snake);
-	 this->pManager->GetGrid()->OpenAll(infile, card);
+	 this->pManager->GetGrid()->OpenAll(infile, card);*/
 	 infile.close();
  }
 
  OpenGridAction::~OpenGridAction()
  {
+
 	 
  }

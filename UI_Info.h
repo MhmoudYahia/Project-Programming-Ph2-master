@@ -10,7 +10,11 @@
 #define NumHorizontalCells 11
 #define NumVerticalCells 9
 #define MaxPlayerCount 4
-
+enum GameObjectEnum {
+	ladder,
+	snake,
+	card,
+};
 enum GUI_MODE		// Graphical user interface mode
 {
 	MODE_DESIGN,	// Design mode (startup mode)
